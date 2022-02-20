@@ -26,10 +26,24 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "Python : Missboos",
+            "name": "Python : Missboon",
             "type": "python",
             "request": "launch",
             "program": "bsMissboon.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python : NsTropicals",
+            "type": "python",
+            "request": "launch",
+            "program": "bsNsTropicals.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python : AroidsShop",
+            "type": "python",
+            "request": "launch",
+            "program": "bsAroidsShop.py",
             "console": "integratedTerminal"
         }
     ]

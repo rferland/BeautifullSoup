@@ -1,13 +1,14 @@
 import bsBaseShopify
 
 
-class bsMissBoon(bsBaseShopify.bsBaseShopify):  
+class bsNsTropical(bsBaseShopify.bsBaseShopify):  
     
-    CONTAINER_CLASS='collection-cascade'
+    URL = 'https://NsTropical.ca/collections/plantes'
+    CONTAINER_CLASS='grid collection-grid grid--uniform grid--no-gutters'
     LISTE_TYPE = 'div'
-    LISTE_CLASS='item'
-    NOM_CLASS='color--primary-text m0 mt2 font-size--sm line-height--4 wd--font-size--m wd--line-height--4'
-    PRIX_CLASS='color--primary-meta m0 font-size--sm line-height--4 wd--font-size--m wd--line-height--4'
+    LISTE_CLASS='product-item grid__item small--one-half medium-up--one-quarter'
+    NOM_CLASS='product-item__title'
+    PRIX_CLASS='product-item__price-wrapper'
     PRIX_SPECIAL_CLASS =''
 
     def parsePlantes(self):
@@ -27,11 +28,11 @@ class bsMissBoon(bsBaseShopify.bsBaseShopify):
 
 if __name__ == '__main__':
     liste = []
-    bs=bsMissBoon("https://missboon.ca/collections/plantes")
+    bs=bsNsTropical("https://nstropicals.com/collections/anthuriums")
     liste = bs.parsePlantes()
-    bs=bsMissBoon("https://missboon.ca/collections/plantes-locales")
+    bs=bsNsTropical("https://nstropicals.com/collections/monstera")
     liste += bs.parsePlantes()
-    bs=bsMissBoon("https://missboon.ca/collections/plantes-tendance")
+    bs=bsNsTropical("https://nstropicals.com/collections/philodendrons")
     liste += bs.parsePlantes()
     for ann in liste:
         # print(ann.code)
