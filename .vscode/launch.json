@@ -4,6 +4,7 @@
     // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Python : Fichier actuel",
             "type": "python",
@@ -44,6 +45,20 @@
             "type": "python",
             "request": "launch",
             "program": "bsAroidsShop.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python : bsTropicouture",
+            "type": "python",
+            "request": "launch",
+            "program": "bsTropicouture.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python : main",
+            "type": "python",
+            "request": "launch",
+            "program": "main.py",
             "console": "integratedTerminal"
         }
     ]

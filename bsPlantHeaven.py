@@ -5,13 +5,13 @@ class bsPlantHeaven(bsBaseShopify):
     URL = 'https://planthaventoronto.com/collections/shop-all-plants?page='
     CONTAINER_CLASS='grid__item grid__item--featured-collections small--one-half'
     LISTE_TYPE = 'li'
-    LISTE_CLASS='grid__item'
+    LISTE_CLASS='grid__item grid__item--collection-template small--one-half medium-up--one-third'
     NOM_CLASS='h4 grid-view-item__title product-card__title'
     PRIX_CLASS='price-item price-item--regular'
     PRIX_SPECIAL_CLASS ='price-item price-item--sale'
 
     def parsePlantes(self):
-        super().initParser(self.URL, 
+        super().initParser(
         self.CONTAINER_CLASS, 
         self.LISTE_TYPE,
         self.LISTE_CLASS,
@@ -19,12 +19,13 @@ class bsPlantHeaven(bsBaseShopify):
         self.PRIX_CLASS,
         self.PRIX_SPECIAL_CLASS)
 
-        return super().parsePlantes()
+        return super().parsePlantes(self.URL)
 
+
+def main():
+    bs=bsPlantHeaven()
+    return bs.parsePlantes()
+    
 
 if __name__ == '__main__':
-    bs=bsPlantHeaven()
-    bs.parsePlantes()
-    for ann in bs.plantesList:
-        print("")
-        print(ann)
+    bsPlantHeaven.main()

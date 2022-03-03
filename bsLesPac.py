@@ -63,13 +63,12 @@ class bsLespac():
             self.soup = BeautifulSoup(response.text,'html.parser')
             self.parseAnnonces(pMotsCle)
 
-           
-    
-
-
-if __name__ == '__main__':
+def main():
     bs=bsLespac()
     bs.Search('fujinon or fujifilm',12)
     for item in bs.annonces:
         print(item)
         print("")
+
+if __name__ == '__main__':
+    bsLespac.main()

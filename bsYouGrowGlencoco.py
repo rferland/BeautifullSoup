@@ -13,7 +13,7 @@ class bsYouGrowGlencoco(bsBaseShopify.bsBaseShopify):
     PRIX_SPECIAL_CLASS ='price-item--sale'
 
     def parsePlantes(self):
-        super().initParser(self.URL, 
+        super().initParser(
         self.CONTAINER_CLASS, 
         self.LISTE_TYPE,
         self.LISTE_CLASS,
@@ -21,12 +21,13 @@ class bsYouGrowGlencoco(bsBaseShopify.bsBaseShopify):
         self.PRIX_CLASS,
         self.PRIX_SPECIAL_CLASS)
 
-        return super().parsePlantes()
+        return super().parsePlantes(self.URL)
 
    
-if __name__ == '__main__':
+def main():
     bs=bsYouGrowGlencoco()
-    bs.parsePlantes()
-    for ann in bs.plantesList:
-        # print(ann.code)
-        print(str(ann))
+    return bs.parsePlantes()
+   
+
+if __name__ == '__main__':
+    bsYouGrowGlencoco.main()

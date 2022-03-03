@@ -12,7 +12,7 @@ class bsAroidsShop(bsBaseShopify.bsBaseShopify):
     PRIX_SPECIAL_CLASS =''
 
     def parsePlantes(self):
-        super().initParser(self.URL, 
+        super().initParser(
         self.CONTAINER_CLASS, 
         self.LISTE_TYPE,
         self.LISTE_CLASS,
@@ -20,16 +20,17 @@ class bsAroidsShop(bsBaseShopify.bsBaseShopify):
         self.PRIX_CLASS,
         self.PRIX_SPECIAL_CLASS)
 
-        return super().parsePlantes()
+        return super().parsePlantes(self.URL)
     
     def __init__(self, pUrl):
         self.URL=pUrl
 
 
-if __name__ == '__main__':
-    liste = []
+def main():
+    
     bs=bsAroidsShop("https://aroidsshop.com/en/collections/all")
-    liste = bs.parsePlantes()
-    for ann in liste:
-        # print(ann.code)
-        print(str(ann))
+    return bs.parsePlantes()
+    
+
+if __name__ == '__main__':
+    bsBaseShopify.main()

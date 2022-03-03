@@ -11,7 +11,7 @@ class bsMissBoon(bsBaseShopify.bsBaseShopify):
     PRIX_SPECIAL_CLASS =''
 
     def parsePlantes(self):
-        super().initParser(self.URL, 
+        super().initParser(
         self.CONTAINER_CLASS, 
         self.LISTE_TYPE,
         self.LISTE_CLASS,
@@ -19,13 +19,12 @@ class bsMissBoon(bsBaseShopify.bsBaseShopify):
         self.PRIX_CLASS,
         self.PRIX_SPECIAL_CLASS)
 
-        return super().parsePlantes()
+        return super().parsePlantes(self.URL)
     
     def __init__(self, pUrl):
         self.URL=pUrl
 
-
-if __name__ == '__main__':
+def main():
     liste = []
     bs=bsMissBoon("https://missboon.ca/collections/plantes")
     liste = bs.parsePlantes()
@@ -33,6 +32,9 @@ if __name__ == '__main__':
     liste += bs.parsePlantes()
     bs=bsMissBoon("https://missboon.ca/collections/plantes-tendance")
     liste += bs.parsePlantes()
-    for ann in liste:
-        # print(ann.code)
-        print(str(ann))
+    
+    return liste
+
+if __name__ == '__main__':
+    bsMissBoon.main()
+    
